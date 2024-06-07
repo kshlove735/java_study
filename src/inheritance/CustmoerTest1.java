@@ -9,7 +9,7 @@ public class CustmoerTest1 {
 //		customerL.setCustomerName("Lee");
 		
 		
-		VIPCustomer customerK = new VIPCustomer(10200, "Kim");
+		VIPCustomer customerK = new VIPCustomer(10200, "Kim", 1);
 		customerK.bonusPoint = 1000;
 		
 //		System.out.println(customerL.showCustomerInfo());

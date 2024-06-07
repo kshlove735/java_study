@@ -1,4 +1,4 @@
-package inheritance;
+package witharraylist;
 
 public class VIPCustomer extends Customer {
 	
@@ -23,13 +23,22 @@ public class VIPCustomer extends Customer {
 	}
 	
 	@Override
+	public String showCustomerInfo() {
+		return super.showCustomerInfo() + "담당 상담원 아이디는 " + agentID;
+	}
+
+	@Override
 	public int calcPrice(int price) {
 		bonusPoint += price * bonusRatio;
-		return price;
+		return price - (int)(price * saleRatio);
 	}
 
 	public int getAgentID() {
 		return agentID;
+	}
+	
+	public void setAgentID(int agentID) {
+		this.agentID = agentID;
 	}
 	
 }
