@@ -27,5 +27,27 @@ public class Member {
 	public String toString() {
 		return memberName + "회원님의 아이디는 " + memberId + "입니다.";
 	}
+
+	
+	// memberId를 기준으로 동일한 Member 인지 확인하는 로직
+	// memberId가 같으면 memberName이 다르더라도 같은 Member로 인식
+	@Override
+	public int hashCode() {
+		return memberId;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		
+		if(obj instanceof Member) {
+			Member member = (Member)obj;
+			if(this.memberId == member.memberId) {
+				return true;
+			}else {
+				return false;
+			}
+		}
+		return false;
+	}
 	
 }
