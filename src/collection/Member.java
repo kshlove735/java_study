@@ -1,10 +1,14 @@
 package collection;
 
-public class Member {
+import java.util.Comparator;
+
+// 객체 비교를 위해 Comparable 또는 Comparator 인터페이스 구현
+public class Member implements Comparable<Member>, Comparator<Member>{
 
 	private int memberId;
 	private String memberName;
 	
+	public Member() {}
 	public Member(int memberId, String memberName) {
 		this.memberId = memberId;
 		this.memberName = memberName;
@@ -48,6 +52,20 @@ public class Member {
 			}
 		}
 		return false;
+	}
+
+	// 객체 비교를 위한 메서드 오버라이드
+	@Override
+	public int compareTo(Member member) {
+		
+		// (내꺼 - 들어온거) 가 양수이면 오름차순
+		return this.memberName.compareTo(member.memberName);
+	}
+
+	@Override
+	public int compare(Member member1, Member member2) {
+		// (내꺼 - 들어온거) 가 양수이면 오름차순
+		return member1.memberId - member2.memberId;
 	}
 	
 }
