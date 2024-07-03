@@ -19,6 +19,16 @@ public class LambdaTest {
 		PrintString reStr = returnPrint();
 		reStr.showString("Hello");
 		
+		String str1 = "hello";
+		String str2 = "hello";
+		
+		System.out.println(str1 == str2);
+		System.out.println(str1.hashCode());
+		System.out.println(str2.hashCode());
+		System.out.println(System.identityHashCode(str1));
+		System.out.println(System.identityHashCode(str2));
+		
+		
 	}
 	
 	// 매개변수로 전달하는 람다식
